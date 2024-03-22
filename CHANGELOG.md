@@ -1,24 +1,11 @@
-## 1.0.0-dev.1
+## 0.0.1
+*  Initial release for android and iOS (Web Coming soon...).
 
-First prerelease. Most Okta operations already implemented on Android
+## 0.0.2
+*  minor bug fixes for android login  with flutter 3 and above.
 
-## 1.0.0-dev.2
+## 0.0.3
+*  crash fixed for other library who is using callbacks(onActivityResult) in android. and minor update 
 
-Second prerelease. Most Okta operations already implemented on iOS
-
-## 1.0.0-dev.4
-
-Dummy version to test continuous deployment
-
-## 1.0.0-dev.5
-
-fix(OktaSDK): added return statement to signIn method
-
-
-## 1.0.0-dev.6
-
-Fix: error: compiling for iOS 11.0, but module 'OktaJWT' has a minimum deployment target of iOS 12.0
-
-## 1.0.0-dev.7
-
-Fixed iOS createConfig to read from secure storage if the refresh token has not expired rather than the access token
+## 0.0.4
+*  updated okta-oidc-android  for better performance

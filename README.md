@@ -1,7 +1,13 @@
-# Flutter Okta SDK
+[![Pub](https://img.shields.io/pub/v/flutter_okta_auth_sdk.svg)](https://pub.dartlang.org/packages/flutter_okta_auth_sdk)
 
-The Flutter Okta SDK library makes it easy to add authentication to your Flutter app.
-This library is a wrapper around [Okta OIDC Android](https://github.com/okta/okta-oidc-android) and [Okta OIDC iOS](https://github.com/okta/okta-oidc-ios).
+# flutter_okta_auth_sdk
+
+
+The Flutter Okta Auth SDK library helps you to add authentication in your Flutter apps. It is a wrapper around [Okta Android](https://github.com/okta/okta-oidc-android) and [Okta iOS](https://github.com/okta/okta-oidc-ios).
+
+Created by Shivam Mishra [@shivbo96](https://github.com/shivbo96)
+
+<a href="https://www.buymeacoffee.com/smishra" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 This library follows the current best practice for native apps using:
 
@@ -12,7 +18,7 @@ This library also exposes APIs to interact with [Authentication API](https://dev
 
 ## Sample
 
-You can check how to use this plugin in this sample [Futter Okta Sample](https://github.com/Perdiga/flutter_okta_sample/issues)
+You can check how to use this plugin in this sample refer to `example/lib/main.dart`
 
 ## Todos
 
@@ -20,67 +26,67 @@ This library is under construction. These are the next steps:
 
 ### Android
 
-  ~~createConfig~~
-  ~~signIn~~
-  customSignIn
-  ~~signOut~~
-  authenticate
-  ~~isAuthenticated~~
-  ~~getAccessToken~~
-  ~~getIdToken~~
-  ~~getUser~~
-  ~~revokeAccessToken~~
-  ~~revokeIdToken~~
-  ~~revokeRefreshToken~~
-  ~~clearTokens~~
-  ~~introspectAccessToken~~
-  ~~introspectIdToken~~
-  ~~introspectRefreshToken~~
-  ~~refreshTokens~~
+~~createConfig~~
+~~signIn~~
+customSignIn
+~~signOut~~
+authenticate
+~~isAuthenticated~~
+~~getAccessToken~~
+~~getIdToken~~
+~~getUser~~
+~~revokeAccessToken~~
+~~revokeIdToken~~
+~~revokeRefreshToken~~
+~~clearTokens~~
+~~introspectAccessToken~~
+~~introspectIdToken~~
+~~introspectRefreshToken~~
+~~refreshTokens~~
 
 ### iOS
 
-  ~~setup~~
-  ~~signIn~~
-  customSignIn
-  ~~signOut~~
-  getAuthClient
-  authenticate
-  ~~isAuthenticated~~
-  ~~getAccessToken~~
-  ~~getIdToken~~
-  ~~getUser~~
-  getUserFromIdToken
-  ~~revokeAccessToken~~
-  ~~revokeIdToken~~
-  ~~revokeRefreshToken~~
-  ~~clearTokens~~
-  ~~introspectAccessToken~~
-  ~~introspectIdToken~~
-  ~~introspectRefreshToken~~
-  ~~refreshTokens~~
+~~setup~~
+~~signIn~~
+customSignIn
+~~signOut~~
+getAuthClient
+authenticate
+~~isAuthenticated~~
+~~getAccessToken~~
+~~getIdToken~~
+~~getUser~~
+getUserFromIdToken
+~~revokeAccessToken~~
+~~revokeIdToken~~
+~~revokeRefreshToken~~
+~~clearTokens~~
+~~introspectAccessToken~~
+~~introspectIdToken~~
+~~introspectRefreshToken~~
+~~refreshTokens~~
 
 ### web
 
-  setup
-  signIn
-  customSignIn
-  singOut
-  getAuthClient
-  authenticate
-  isAuthenticated
-  getAccessToken
-  getIdToken
-  getUser
-  getUserFromIdToken
-  revokeAccessToken
-  revokeIdToken
-  revokeRefreshToken
-  clearTokens
-  introspectAccessToken
-  introspectIdToken
-  introspectRefreshToken
-  refreshTokens
+setup
+signIn
+customSignIn
+singOut
+getAuthClient
+authenticate
+isAuthenticated
+getAccessToken
+getIdToken
+getUser
+getUserFromIdToken
+revokeAccessToken
+revokeIdToken
+revokeRefreshToken
+clearTokens
+introspectAccessToken
+introspectIdToken
+introspectRefreshToken
+refreshTokens
 
 ## Prerequisites
 
@@ -113,7 +119,7 @@ These values will be used in your Flutter application to setup the OpenID Connec
 
 ## Getting started
 
-You can check the pub.dev to know how to install this plugin. [Flutter Okta SDK](https://pub.dev/packages/flutter_okta_sdk/install).
+You can check the pub.dev to know how to install this plugin. [Flutter Okta Auth SDK](https://pub.dev/packages/flutter_okta_auth_sdk/install).
 
 ### Setup Android
 
@@ -141,14 +147,14 @@ For Android, there is one steps that you must take:
 ```
 4. Add a couple of rules to the buildTypes/release block inside the app/build.gradle file
 
-    buildTypes {
-        release {
-              useProguard true
-              proguardFiles getDefaultProguardFile('proguard-android.txt'),
-              'proguard-rules.pro'
-              signingConfig signingConfigs.release
-        }
-    }
+   buildTypes {
+   release {
+   useProguard true
+   proguardFiles getDefaultProguardFile('proguard-android.txt'),
+   'proguard-rules.pro'
+   signingConfig signingConfigs.release
+   }
+   }
 
 
 ### Setup iOS
@@ -163,10 +169,10 @@ You will also need to know your Okta Org URL, which you can see on the home page
 Before calling any other method, it is important that you call `createConfig` to set up the configuration properly on the native modules.
 
 ``` dart
-import 'package:flutter_okta_sdk/flutter_okta_sdk.dart';
-import 'package:flutter_okta_sdk/BaseRequest.dart';
+import 'package:flutter_okta_auth_sdk/flutter_okta_auth_sdk.dart';
+import 'package:flutter_okta_auth_sdk/base_request.dart';
 
-var oktaSdk = OktaSDK();
+ var flutterOktaAuthSdk = FlutterOktaAuthSdk();
 var oktaBaseRequest = BaseRequest(
       issuer: OKTA_ISSUER_URL,
       clientId: OKTA_CLIENT_ID,
@@ -175,7 +181,7 @@ var oktaBaseRequest = BaseRequest(
       redirectUrl: OKTA_REDIRECT_URI,
       scopes: ['openid', 'profile', 'email', 'offline_access']);
 
-await oktaSdk.createConfig(oktaBaseRequest);
+await flutterOktaAuthSdk.createConfig(oktaBaseRequest);
 ```
 
 ### `createConfig`
@@ -191,10 +197,10 @@ This method will redirect to okta´s sign in page, and will return when to the a
 The return object will have a parameter `resolve_type` that can assume the following values: `authorized`, `signed_out`, `cancelled`
 
 ``` dart
-if (oktaSdk.isInitialized == false) {
+if (flutterOktaAuthSdk.isInitialized == false) {
   await this.createConfig();
 }
-var result = await oktaSdk.signIn();
+var result = await flutterOktaAuthSdk.signIn();
 ```
 
 ### `signOut`
@@ -203,10 +209,10 @@ Clear the browser session and clear the app session (stored tokens) in memory. F
 The return object will have a parameter `resolve_type` that can assume the following values: `authorized`, `signed_out`, `cancelled`
 
 ``` dart
-  if (oktaSdk.isInitialized == false) {
+  if (flutterOktaAuthSdk.isInitialized == false) {
     await this.createConfig();
   }
-  var result = await oktaSdk.signOut();
+  var result = await flutterOktaAuthSdk.signOut();
 ```
 
 ### `isAuthenticated`
@@ -261,6 +267,7 @@ Sample responses can be found [here](https://developer.okta.com/docs/reference/a
 
 ### `refreshTokens`
 Refreshes all tokens. Return the refreshed tokens.
+
 
 
 
