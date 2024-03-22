@@ -17,7 +17,7 @@ fun getUser() {
         }
 
         override fun onError(error: String, exception: AuthorizationException) {
-            PendingOperation.error(Errors.OKTA_OIDC_ERROR, exception.errorDescription)
+            PendingOperation.error(Errors.OKTA_OIDC_ERROR, exception.errorDescription, "$error $exception")
         }
     })
 }
